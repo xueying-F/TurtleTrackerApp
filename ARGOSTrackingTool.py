@@ -9,6 +9,9 @@
 # Date:   Fall 2020
 #--------------------------------------------------------------
 
+#Ask user for the search date
+user_date = input("Enter data to search for Sara [M/D/YYYY]: ")
+
 # Create a variable pointing to the data file
 file_name = 'data/Raw/sara.txt'
 
@@ -20,6 +23,10 @@ line_list = file_object.readlines()
 
 #Close the file
 file_object.close()
+
+#Create two empty dictionary object
+date_dict = {}
+coord_dict = {}
 
 #Iterate through all lines in the linelist
 for lineString in line_list:
@@ -37,5 +44,6 @@ for lineString in line_list:
     
     #Print the location of sara
     print (f"Record {record_id} indicates Sara was seen at {obs_lat}N and {obs_lon}W on {obs_date}")
-
+    date_dict[record_id] = obs_date
+    date_dict[record_id] = (obs_lat,obs_lon)
 
